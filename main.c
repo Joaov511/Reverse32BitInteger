@@ -3,19 +3,17 @@
 
 int main() {
     int numbers[10];
-    int n = 1234567891;
+    int x = 123764365;
 
-    int getNumberOfDigits(int32_t number) {
-        int32_t digits = 0;
-        int32_t divider = 10;
+    int getNumberOfDigits(int number) {
+        int numberOfDigits = 0;
+        int divider = 10;
         while(number > 0) {
             number = number/divider;
-            digits++;
-            divider*10;
+            numberOfDigits++;
         }
-        return digits;
+        return numberOfDigits;
     }
-    int numberOfDigits = getNumberOfDigits(n);
 
     int concat(int x, int y) {
         int temp = y;
@@ -27,25 +25,27 @@ int main() {
     }
 
     int concatDigits(int arrayLength) {
-        int result = numbers[0];
+        int numberConcat = numbers[0];
         for(int i = 0; i < arrayLength ; i++) {
-            result = concat(result, numbers [i+1]);
+            numberConcat = concat(numberConcat, numbers [i+1]);
         }
-        return result;
+        return numberConcat;
     }
 
-    int *traverseThroughNumber(int number, int numberOfDigits) {
+    int traverseThroughNumber(int x, int numberOfDigits) {
         int divider = 10;
         for(int i = 0; i <= numberOfDigits; i++) {
-            int digit = number % divider;
-            number = number/divider;
-            divider*10;
+            int digit = x % divider;
+            x = x/divider;
             numbers[i] = digit;
         }
-        int res = concatDigits(numberOfDigits);
-        printf("%i", res);
+        int reversedInteger = concatDigits(numberOfDigits);
+        return reversedInteger;
     }
-    traverseThroughNumber(n, numberOfDigits);
+
+    int numberOfDigits = getNumberOfDigits(x);
+    int result = traverseThroughNumber(x, numberOfDigits);
+    printf("%i", result);
     
     return 0;
 }
