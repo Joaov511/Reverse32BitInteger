@@ -26,3 +26,12 @@ int concatDigitsArray(int arrayLength, int *array) {
     }
     return numberConcat;
 }
+
+void putDigitsIntoArray(int x, int numberOfDigits, int *array) {
+    int divider = 10;
+    for(int i = 0; i <= numberOfDigits; i++) {
+        int digit = x % divider;
+        x = x/divider;
+        array[i] = digit;
+    }
+}
