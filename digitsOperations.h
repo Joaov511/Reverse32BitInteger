@@ -2,7 +2,7 @@
 #define digitsOperations_h
 
 int getNumberOfDigits(int number);
-int concat(int x, int y);
-int concatDigits(int arrayLength, int *array);
+int concatDigits(int x, int y);
+int concatDigitsArray(int arrayLength, int *array);
 
 #endif

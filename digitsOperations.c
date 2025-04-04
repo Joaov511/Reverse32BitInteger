@@ -10,7 +10,7 @@ int getNumberOfDigits(int number) {
     return numberOfDigits;
 }
 
-int concat(int x, int y) {
+int concatDigits(int x, int y) {
     int temp = y;
     while (y != 0) {
         x *= 10;
@@ -19,10 +19,10 @@ int concat(int x, int y) {
     return x + temp;
 }
 
-int concatDigits(int arrayLength, int *array) {
+int concatDigitsArray(int arrayLength, int *array) {
     int numberConcat = array[0];
     for(int i = 0; i < arrayLength ; i++) {
-        numberConcat = concat(numberConcat, array[i+1]);
+        numberConcat = concatDigits(numberConcat, array[i+1]);
     }
     return numberConcat;
 }

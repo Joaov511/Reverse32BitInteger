@@ -27,7 +27,7 @@ void traverseThroughNumber(int x, int numberOfDigits, int *array) {
 int reverseInteger(int x, int *array) {
     int numberOfDigits = getNumberOfDigits(x);
     traverseThroughNumber(x, numberOfDigits, array);
-    int reversedInteger = concatDigits(numberOfDigits, array);
+    int reversedInteger = concatDigitsArray(numberOfDigits, array);
     return reversedInteger;
 }
 
