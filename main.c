@@ -1,14 +1,12 @@
 #include <stdio.h>
-#include <stdint.h>
 #include <stdlib.h>
 #include "digitsOperations.h"
-
-#define INTEGER_32BIT_MAX_LENGTH 10
 
 int reverseInteger(int x, int *array);
 
 int main(int argc, char *argv[]) {
-    int numbers[INTEGER_32BIT_MAX_LENGTH];
+    const int maxLength32BitInteger = 10;
+    int numbers[maxLength32BitInteger];
     int number = atoi(argv[1]);
     
     int reversedInteger = reverseInteger(number, numbers);
